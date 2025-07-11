@@ -1,0 +1,358 @@
+:root {
+    --ui-color-dark: rgb(41, 41, 49);
+    --ui-text-color-dark: white;
+    --ui-button-dark: rgb(70, 70, 70);
+    --ui-color-light: rgb(219, 219, 219);
+    --ui-text-color-light: rgb(41, 41, 51);
+    --ui-button-light: rgb(224, 224, 224);
+    --canvas-dark: black;
+    --canvas-light: white;
+    --grid-color-dark: white;
+    --grid-color-light: black;
+}
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: var(--ui-text-color-dark);
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    background-color: var(--canvas-dark);
+    transition: background-color 0.2s;
+}
+
+.toolbar {
+    position: fixed;
+    background-color: var(--ui-color-dark);
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    bottom: 0;
+    translate: -50% 0%;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, .2);
+    padding: .5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: .375;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+
+.toolbar-group {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-btn {
+    padding: 10px;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: scale 0.2s, box-shadow 0.2s, background-color 0.2s;
+    background-color: var(--ui-button-dark);
+    color: var(--ui-text-color-dark);
+}
+
+.toolbar-btn:hover {
+    filter: brightness(1.02);
+}
+
+.toolbar-btn:active {
+    filter: brightness(0.98);
+}
+
+.toolbar-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.toolbar-close:hover {
+    filter: brightness(1.02);
+}
+
+.toolbar-close:active {
+    filter: brightness(0.98);
+}
+
+.line-color-box {
+    border: none;
+    border-radius: 1rem;
+}
+
+.toolbar .toolbar-btn:hover {
+    scale: 1.1;
+}
+
+.text-box 
+{
+    position: fixed;
+    background-color: transparent;
+    color: black;
+    border-radius: .5rem;
+}
+
+.toolbar-btn:not(.clear-btn).activated {
+    background-color: gold;
+    box-shadow: 0 0 10px 2px gold;
+    color: black;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    /* Remove default styling */
+    width: 200px;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    outline: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* WebKit (Chrome, Safari, Edge) Track */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+}
+
+/* WebKit Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: gold;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    /* To center thumb on track */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background: #444;
+}
+
+/* Firefox Track */
+input[type="range"]::-moz-range-track {
+    height: 6px;
+    background: #888;
+    border-radius: 3px;
+}
+
+/* Firefox Thumb */
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #444;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+    background: #222;
+}
+
+/* IE Track */
+input[type="range"]::-ms-track {
+    height: 6px;
+    background: var(--ui-button-dark);
+    border-color: transparent;
+    color: transparent;
+}
+
+/* IE Thumb */
+input[type="range"]::-ms-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--ui-button-dark);
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+}
+
+input[type="range"]:hover::-ms-thumb {
+    background: #222;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+}
+
+/* Remove default style in WebKit browsers */
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+/* Firefox */
+input[type="color"]::-moz-color-swatch {
+    border: none;
+}
+
+.nav-label
+{
+    color: var(--ui-text-color-dark);
+    transition: color 0.2s;
+}
+
+nav {
+    position: fixed;
+    height: 100vh;
+    width: 15rem;
+    background-color: var(--ui-color-dark);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    translate: -100% 0%;
+    transition: translate 0.2s, background-color 0.2s;
+}
+
+.nav-btn {
+    position: absolute;
+    left: 100%;
+    background-color: var(--ui-color-dark);
+    border-radius: .5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+input[type="color"] {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.card {
+    border: .1rem solid var(--ui-button-dark);
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.brush-label {
+    font-size: .75rem;
+    text-wrap-mode: nowrap;
+}
+
+.brush-details-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brush-property-text {
+    opacity: .75;
+}
+
+.brush-size-text {
+    width: 2rem;
+    background-color: transparent;
+    border: none;
+    outline: 1px solid;
+    border-radius: .5rem;
+    padding: 0rem .5rem;
+}
+
+/* .layers
+{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+}
+
+.layer
+{
+    width: 100%;
+    height: fit-content;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: whitesmoke;
+}
+
+.layer-title
+{
+    color: black;
+
+} */
+
+.zoom-level {
+    user-select: none;
+    cursor: pointer;
+    transition: scale 0.2s;
+}
+
+.zoom-level:hover {
+    scale: 1.1;
+}
+
+.zoom-level:active {
+    scale: 0.9;
+}
+
+.brush-cursor {
+    position: fixed;
+    background-color: none;
+    border: 1px dashed rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    translate: -50% -50%;
+    pointer-events: none;
+}
+
+.theme {
+    outline: none;
+    color: var(--ui-text-color-dark);
+    background-color: var(--ui-color-dark);
+    border-radius: .5rem;
+    padding: .25rem .5rem;
+}
+
+.option {
+    background-color: var(--ui-color-dark);
+    color: var(--ui-text-color-dark);
+}

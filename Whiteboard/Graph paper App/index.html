@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Whiteboard/Graph Paper</title>
+</head>
+
+<body>
+    <div class="brush-cursor"></div>
+    <nav>
+        <button class="nav-btn">
+        <i class="fa fa-gear"></i></button>
+        <div class="card">
+            <label for="canvas-color" class="nav-label">Canvas color</label>
+            <input type="color" name="canvas-color" class="canvas-color" value="#fff">
+        </div>
+        <div class="card">
+            <label for="grid-color" class="nav-label">Grid color</label>
+            <input type="color" name="grid-color" class="grid-color" value="#000">
+        </div>
+        <div class="card">
+            <label for="theme" class="nav-label">Theme</label>
+            <select name="theme" class="theme">
+                <option value="dark" class="option">Dark</option>
+                <option value="light" class="option">Light</option>
+            </select>
+        </div>
+        <!-- <div class="card layers">
+            <label for="" class="nav-label">Layers</label>
+            <div class="layer">
+                <h4 class="layer-title">Layer 1</h4>
+            </div>
+            <div class="layer">
+                <span class="layer-title">Layer 2</span>
+            </div>
+            <div class="layer">
+                <span class="layer-title">Layer 3</h4>
+            </div>
+            <div class="layer">
+                <span class="layer-title">Layer 4</span>
+            </div>
+        </div> -->
+    </nav>
+    <div class="toolbar">
+        <div class="toolbar-group">
+            <span class="zoom-level">100%</span>
+            <button class="toolbar-btn clear-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+            <hr style="rotate: 90deg; width: 100%; border: solid 1px; opacity: 0.125; border-radius: 1000px;">
+            <button class="toolbar-btn" data-drawmode="move">
+                <i class="fa fa-hand"></i>
+            </button>
+            <button class="toolbar-btn" data-drawmode="free">
+                <i class="fa fas fa-pen-alt"></i>
+            </button>
+            <button class="toolbar-btn" data-drawmode="circle">
+                <i class="far far fa-circle"></i>
+            </button>
+            <button class="toolbar-btn" data-drawmode="square">
+                <i class="far fa-square"></i>
+            </button>
+            <button class="toolbar-btn" data-drawmode="line">
+                <i class="fa fas fa-grip-lines"></i>
+            </button>
+            <button class="toolbar-btn" data-drawmode="text"><i class="fa fas fa-text-heightt"></i></button>
+            <hr style="rotate: 90deg; width: 100%; border: solid 1px; opacity: 0.125; border-radius: 1000px;">
+            <div class="brush-details-box">
+                <label for="brush-color" class="brush-label">Brush color</label>
+                <span class="brush-label brush-property-text brush-color-text">#drs. maj.</span>
+            </div>
+            <input type="color" class="line-color-box" name="brush-color">
+            <hr style="rotate: 90deg; width: 100%; border: solid 1px; opacity: 0.125; border-radius: 1000px;">
+            <div class="brush-details-box">
+                <label for="brush-size" class="brush-label">Brush size</label>
+                <input type="number" class="brush-label brush-property-text brush-size-text" max="250" min="2">
+            </div>
+            <input type="range" class="brush-line-width" value="15" min="0.1" max="250" name="brush-size">
+        </div>
+    </div>
+    <canvas id="graph-canvas"></canvas>
+    <script src="index.js"></script>
+</body>
+
+</html>
