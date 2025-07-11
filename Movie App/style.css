@@ -1,0 +1,119 @@
+*
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding-block-end: 0;
+}
+
+body
+{
+    background-color: #151515;
+}
+
+.nav-bar
+{
+    background-color: rgb(53, 44, 106);
+    padding: 1rem; 
+    justify-content: center;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.input-box
+{
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.input-box > *
+{
+    padding: 1rem;
+    border: none;
+    outline: none;
+}
+
+button
+{
+    cursor: pointer;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 1rem;
+}
+
+.fetch-btn
+{
+    border-radius: 10rem;
+}
+
+
+main {
+    margin-top: 5rem;
+    padding: 5rem 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#movie-poster
+{   
+    background-color: rgb(80, 80, 80);
+    height: 100%;
+    width: 100%;
+}
+
+.search-input
+{
+    background-color: #232323;
+    color: white;
+    width: 20rem;
+}
+
+.search-btn
+{
+    background-color: darkslateblue;
+    color: white;
+}
+
+.card
+{
+    display: flex;
+    flex-direction: column;
+    background-color: darkslateblue;
+    color: white;
+    border-radius: 1rem;
+    width: 20rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.card:hover
+{
+    box-shadow: 0 0 10px rgb(132, 50, 255);
+}
+
+.card-info
+{
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.card-title
+{
+    margin: 2rem 0rem;
+}

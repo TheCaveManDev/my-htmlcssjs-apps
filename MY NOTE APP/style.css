@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Michroma&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+
+:root {
+    --color1: #46237A;
+    --color2: #256EFF;
+    --color3: #FF495C;
+    --color4: #3DDC97;
+    --color5: #FCFCFC;
+}
+
+* {
+    font-family: 'TikTok Sans', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body {
+    background-color: var(--color5);
+}
+
+header,
+footer {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+main {
+    min-height: 100vh;
+    padding: 2rem 6rem;
+    background-color: var(--color2);
+}
+
+h1 {
+    color: var(--color2);
+}
+
+.main-title {
+    color: var(--color5);
+    margin-bottom: 2rem;
+}
+
+button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary,
+.add-btn {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color2);
+    color: var(--color5);
+}
+
+.btn-primary:hover {
+    background-color: var(--color5);
+    color: var(--color2);
+}
+
+.btn-primary:active {
+    background-color: #2462df;
+}
+
+.add-btn {
+    background-color: var(--color5);
+    color: var(--color2);
+}
+
+.add-btn:hover {
+    background-color: var(--color2);
+    color: var(--color5);
+}
+
+.empty-notes-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+strong {
+    color: var(--color2);
+    position: relative;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.note-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.note-card {
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    height: 15rem;
+    width: 20rem;
+    flex-shrink: 0;
+}
+
+.note-property-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.note-title {
+    flex: 1;
+}
+
+.delete-note {
+    background-color: var(--color3);
+    color: white;
+}
+
+.delete-note:hover {
+    background-color: crimson;
+}
+
+.delete-note:active {
+    background-color: rgb(199, 20, 56);
+}
+
+.edit-note:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+.edit-note:active {
+    background-color: rgb(234, 234, 234);
+}
+
+.note-content {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Modal styles */
+#modal {
+    position: fixed;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 20rem;
+    z-index: 1000;
+    overflow: hidden;
+    background-color: var(--color5);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.dialog-close {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+#modal label {
+    color: var(--color2);
+    font-weight: bold;
+}
+
+#dialogInput,
+#dialogContent {
+    padding: 0.5rem;
+    border: 1px solid var(--color2);
+    border-radius: 0.5rem;
+    background-color: var(--color5);
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#dialogContent {
+    resize: vertical;
+    min-height: 6rem;
+    max-height: 12rem;
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    top: 0;
+    left: 0;
+    z-index: 900;
+}
+
+@media (max-width: 650px) {
+    main {
+        padding: 1rem;
+    }
+    .note-card {
+        width: 100%;
+    }
+}

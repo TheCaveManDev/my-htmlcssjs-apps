@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Notlify</title>
+</head>
+
+<body>
+
+    <dialog id="modal" aria-modal="true" role="dialog" aria-labelledby="modalTitle" tabindex="0">
+        <div class="modal-content">
+            <button class="dialog-close" onclick="closeNoteDialog()" aria-label="Close modal">✖️</button>
+            <h2 id="modalTitle" class="modal-title">Add a note</h2>
+
+            <label for="dialogInput">Title</label>
+            <input type="text" id="dialogInput" name="dialogTitle" placeholder="Add note title here..." />
+
+            <label for="dialogContent">Content</label>
+            <textarea id="dialogContent" name="dialogContent" placeholder="Add note content here..."></textarea>
+
+            <div class="dialog-btns">
+                <button class="dialog-apply btn-primary">Apply</button>
+                <button class="dialog-cancel" onclick="closeNoteDialog()">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <header>
+        <h1>Notlify</h1>
+        <div class="header-btns">
+            <button class="btn-primary add-btn" onclick="openNoteDialog()">+ Add a note</button>
+            <button class="theme-btn">Theme: dark</button>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="main-title">Notes</h1>
+
+        <div class="empty-notes-content">
+            <h3>No notes here...</h3>
+            <p>Start the day by writing down some notes</p>
+            <button class="btn-primary add-btn" onclick="openNoteDialog()">+ Add a note</button>
+        </div>
+
+        <div class="note-container"></div>
+    </main>
+
+    <footer>
+        <span>By <strong>TheCaveMan</strong></span>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

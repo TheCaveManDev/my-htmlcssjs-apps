@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI, sans-serif;
+    --hover-color: rgb(122, 167, 250);
+    --active-color: rgb(77, 123, 209);
+    --normal-color: rgba(0,0,0,.2);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+    background: rgb(39, 31, 39);
+}
+
+.toggle-button {
+    font-size: 1.5rem;
+    padding: 1em 2em;
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    margin-top: 1em;
+    color: white;
+    background-color: transparent;
+}
+
+.toggle-button:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-button:active {
+    box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-container {
+    color: rgb(50,50,50);
+    transition: .2s;
+    background: linear-gradient(to top, whitesmoke, white);
+    width: 30em;
+    padding: 2em;
+    height: 30em;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+    box-shadow: 5px 5px 20px rgba(0,0,0,.1);
+}
+
+.close-button {
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.2);
+    color: white;
+    border: none;
+    width: 2.5em;
+    padding: .5em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: var(--hover-color);
+}
+
+.title {
+    margin-bottom: 1em;
+}
+
+.close-button:active {
+    background-color: var(--active-color);
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.2);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    display: none;
+
+}
+
+.textarea {
+    border: none;
+    outline: none;
+    padding: .5em;
+    height: 10em;
+    resize: none;
+    border-radius: .5em;
+    margin-top: 1em;
+    width: 100%;
+    outline: solid transparent;
+    transition: .2s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.textarea:focus {
+    outline: solid cornflowerblue;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%; 
+}
+
+footer h1 {
+    font-size: .8em;
+    word-spacing: .4em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: white;  
+}
+
+.close-button span {
+    transition: .2s;
+}
+
+.close-button:hover span {
+    rotate: 45deg;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    padding: 1em;
+}
+
+.primary-btn {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+button:not(.toggle-button, .close-button) {
+    font-size: 1em;
+    border-radius: .5em;
+    border: none;
+    padding: .5em;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    position: relative;
+}
+
+.toggle-button::before, .toggle-button::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding: .2em;
+    transform: translate(-.2em, -.2em);
+    border-radius: .5em;
+    pointer-events: none;
+    user-select: none;
+    background: linear-gradient(to bottom, cornflowerblue, hotpink);
+}
+
+.toggle-button::before {
+    animation: rotateHue 3s infinite linear;
+}
+
+.toggle-button::after {
+    z-index: -1000;
+    animation: rotateHue2 3s infinite linear;
+} 
+
+@keyframes rotateHue {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes rotateHue2 {
+    from {
+        filter: hue-rotate(0deg) blur(10px);
+    }
+    to {
+        filter: hue-rotate(360deg) blur(10px);
+    }
+}
+
+.message {
+    margin-top: .5em;
+    text-align: center;
+}
