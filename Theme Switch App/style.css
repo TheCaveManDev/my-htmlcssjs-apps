@@ -1,0 +1,97 @@
+:root {
+    --light-color: whitesmoke;
+    --dark-color: #121211;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+body {
+    background-color: whitesmoke;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.label-container {
+    text-align: center;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.theme {
+    transition: .3s;
+}
+
+.label {
+    font-weight: normal;
+}
+
+button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 11rem;
+    border: none;
+    background-color: gainsboro;
+    transition: box-shadow .2s, filter 1s;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: inset 10px 10px 10px rgba(0,0,0,.1), inset -10px -10px 10px rgba(255,255,255,.5);
+}
+
+.switch {
+    width: 6rem;
+    height: 3rem;
+    background-color: red;
+    border-radius: 1000rem;
+    background-color: rgb(50, 50, 50);
+    position: relative;
+    transition: .3s;
+}
+
+.circle {
+    background-color: whitesmoke;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1000rem;
+    scale: .75;
+    cursor: pointer;
+    transition: .3s;
+    position: absolute;
+    right: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.icon-container {
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border-radius: 1000rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0%;
+    transition: .3s;
+    justify-content: center;
+}
+
+#icon {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    transition: .3s;
+    position: absolute;
+}
